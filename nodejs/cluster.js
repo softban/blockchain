@@ -1,4 +1,6 @@
-var crypto = require('crypto');
+const crypto = require('crypto');
+const program = require('commander')
+const chalk = require('chalk');
 
 class node {
   constructor(index, data, last_node) {
@@ -18,7 +20,7 @@ class node {
 
 class nodeCluster {
   constructor() {
-    this.core=[new node(0,'nodejs-genesis-block','0')];
+    this.core=[new node(0,'nodejs.cluster-genesis-block','0')];
     this.previous_block=this.core[0];
   }
   create_node(data) {
@@ -37,8 +39,23 @@ class nodeCluster {
 
 
 var cluster = new nodeCluster();
+// console arguments
+program
+  .version('0.0.1')
+  .option('-s, --size [len]', 'set size of blockchain')
+  .option('-d, --display', 'display blockchain')
+  .option('-n, --node [index]', 'display blockchain')
+  .parse(process.argv);
 
-for (i=1; i < 4; i++) {
-  cluster.create_node('block_data_'+String(i))
-}
-console.log(cluster.core);
+if (program.size) {
+  for (i=0; i < program.size; i++) {
+    cluster.create_node('node #'+String(i))
+  }}
+if (program.display) {
+  for (i=0; i < cluster.core.length; i++) {
+    console.log(
+      '[%s] %s !%s',
+      chalk.cyanBright(cluster.core[i].index),chalk.whiteBright(cluster.core[i].hash),chalk.white(cluster.core[i].data))
+  }}
+if (program.node) {console.log(chalk.cyanBright('--'));console.log(cluster.core[program.node]);console.log(chalk.cyanBright('--'))}
+//

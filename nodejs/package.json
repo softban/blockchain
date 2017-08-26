@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Blockchain in Nodejs",
   "main": "cluster.js",
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
