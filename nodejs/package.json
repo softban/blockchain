@@ -1,0 +1,21 @@
+{
+  "name": "node-cluster",
+  "version": "1.0.0",
+  "description": "Blockchain in Nodejs",
+  "main": "cluster.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/softban"
+  },
+  "keywords": [
+    "block",
+    "blockchain"
+  ],
+  "author": "Softban",
+  "license": "ISC"
+}
