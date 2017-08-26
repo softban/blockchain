@@ -44,7 +44,7 @@ program
   .version('0.0.1')
   .option('-s, --size [len]', 'set size of blockchain')
   .option('-d, --display', 'display blockchain')
-  .option('-n, --node [index]', 'display blockchain')
+  .option('-n, --node [index]', 'display node')
   .parse(process.argv);
 
 if (program.size) {
